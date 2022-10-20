@@ -21,7 +21,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth:users', 'verified'])->name('dashboard');
 
 Route::get('/component-test1', [ComponentTestController::class, 'showComponent1']);
 
